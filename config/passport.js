@@ -10,14 +10,14 @@ const jwtOptions = {
   secretOrKey: "some_secret"
 };
 
-const jwtStrategy = new JwtStrategy(jwtOptions, (jwt_payload, next) => {
+const jwtStrategy = new JwtStrategy(jwtOptions, async (jwt_payload, done) => {
   console.log("payload received", jwt_payload);
 
-  const user = User.find({ _id: jwt_payload.id });
+  const user = await User.find({ _id: jwt_payload.id });
   if (user) {
-    next(null, user);
+    done(null, user);
   } else {
-    next(null, false);
+    done(null, false);
   }
 });
 
