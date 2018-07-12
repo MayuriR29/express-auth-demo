@@ -1,9 +1,3 @@
-// TODO handleasync error for all db operations
-// TODO Fix bug where user cannot sign in after server restarts because this.salt is undefined
-// TODO fix: DeprecationWarning: Custom inspection function on Objects via .inspect() is deprecated
-// TODO: fix DeprecationWarning: collection.count is deprecated, and will be removed in a future version. Use collection.countDocuments or collection.estimatedDocumentCount instead
-// TODO: get mongoose lab solutions from sahil
-
 const express = require("express");
 const { passport } = require("./config/passport");
 const mongoose = require("mongoose");
