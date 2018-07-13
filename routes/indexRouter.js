@@ -38,6 +38,7 @@ router.post("/signin", async (req, res) => {
 
   if (user.validPassword(password)) {
     const userId = { id: user.id };
+    console.log('user id',userId);
     const token = jwt.sign(userId, jwtOptions.secretOrKey);
     res.json({ message: "ok", token: token });
   } else {
